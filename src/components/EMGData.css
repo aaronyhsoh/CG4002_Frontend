@@ -1,0 +1,35 @@
+.emg-component {
+    border: 5px solid black;
+    margin-bottom: 20px;
+    background-color: #979998;
+}
+
+.emg-header {
+    font-weight: bold;
+    text-align: center;
+    padding: 0px;
+    margin: 10px;
+}
+
+.emg-value {
+    font-weight: bold;
+    font-size: 30px;
+    color: blue;
+    margin: 0px;
+}
+
+.emg-min-max {
+    align-content: start;
+}
+
+.emg-min {
+    font-size: 20px;
+    color: red;
+    text-align: start;
+}
+
+.emg-max {
+    font-size: 20px;
+    color: green;
+    text-align: end;
+}

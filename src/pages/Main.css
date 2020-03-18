@@ -1,0 +1,21 @@
+.dance {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.tables {
+    width: 90%;
+    margin-left: 120px;
+    padding-bottom: 150px;
+}
+
+.accelerometer {
+    float: left;
+    width: 42%;
+    margin-right: 20px;
+}
+
+.gyroscope {
+    float: left;
+    width: 42%;
+}

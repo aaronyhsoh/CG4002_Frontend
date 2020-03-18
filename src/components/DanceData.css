@@ -1,0 +1,21 @@
+.dance-data-component{
+    border: 5px solid black;
+    font-size: 30px;
+    background-color: #979998;
+}
+
+.dance-data-header {
+    margin: 10px;
+}
+
+.dance-move {
+    font-weight: bold;
+    font-size: 20px;
+    color: purple;
+}
+
+.dance-position {
+    font-weight: bold;
+    font-size: 20px;
+    color: #b41015;
+}
