@@ -88,14 +88,6 @@ class GyroscopeTable extends React.Component {
 
     const columns = [
       {
-        name: "sensor",
-        label: "Sensor",
-        options: {
-          filter: false,
-          sort: false,
-        }
-      },
-      {
         name: "x",
         label: "X",
         options: {

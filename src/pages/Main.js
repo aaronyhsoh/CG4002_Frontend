@@ -8,21 +8,27 @@ import FunctionBar from "../components/FunctionBar";
 import "./Main.css";
 import GyroscopeTable from "../components/GyroscopeTable";
 import ButtonAppBar from "../components/AppBar";
+import LineGraph from "../components/LineGraph";
+import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
+
 
 const socket = socketIOClient(_.PORT.BACKEND);
+let tick = 0;
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sensorData: [],
-      emgData: {},
+      //sensorData: [],
+      emgData: [],
       danceData: {},
       gyroscopeData: [],
       emgMin: 0,
       emgMax: 0,
-      stream: false
+      stream: false,
+      accelerometerData: []
     }
+
     this.websocketInit = this.websocketInit.bind(this);
     this.websocketDisconnect = this.websocketDisconnect.bind(this);
     this.toggleStream = this.toggleStream.bind(this);
@@ -36,18 +42,37 @@ class Main extends React.Component {
       }
     });
     socket.on(this.props.dancer_id, data => {
-      console.log(this.props.dancer_id + ": " + JSON.stringify(data));
+      //console.log(this.props.dancer_id + ": " + JSON.stringify(data));
       const emgMin = (this.state.emgMin > data.emg_data.value) ? data.emg_data.value : this.state.emgMin;
       const emgMax = (this.state.emgMax < data.emg_data.value) ? data.emg_data.value : this.state.emgMax;
-
+      const accelerometerData = {
+        name: tick,
+        x: data.sensor_data.x,
+        y: data.sensor_data.y,
+        z: data.sensor_data.z
+      };
+      const accelerometerDataArray = this.state.accelerometerData.concat([accelerometerData]);
+      if (accelerometerDataArray.length > 50) {
+        accelerometerDataArray.shift();
+      }
+      const emgData = {
+        name: tick,
+        emg: data.emg_data.value
+      }
+      const emgDataArray = this.state.emgData.concat([emgData]);
+      if (emgDataArray.length > 50) {
+        emgDataArray.shift();
+      }
+      //console.log("lineData: ", lineData);
       if (this.state.stream) {
         this.setState({
-          sensorData: data.sensor_data,
+          //sensorData: data.sensor_data,
           danceData: data.dance_data,
-          emgData: data.emg_data,
-          gyroscopeData: data.gyroscope_data,
+          emgData: emgDataArray,
+          gyroscopeData: [data.gyroscope_data],
           emgMin: emgMin,
-          emgMax: emgMax
+          emgMax: emgMax,
+          accelerometerData: accelerometerDataArray
         });
       }
     })
@@ -77,7 +102,7 @@ class Main extends React.Component {
   }
 
   render() {
-    const {sensorData, emgData, danceData, emgMin, emgMax, stream, gyroscopeData} = this.state;
+    const {accelerometerData, emgData, danceData, emgMin, emgMax, stream, gyroscopeData } = this.state;
 
     return (
       <div>
@@ -95,18 +120,69 @@ class Main extends React.Component {
           />
         </div>
         <div className="emg">
-          <EMGData
-            data={emgData.value}
-            emgMin={emgMin}
-            emgMax={emgMax}
-          />
-        </div>
-        <div className="tables">
-          <div className="accelerometer">
-            <NewTable
-              dancer_id={this.props.dancer_id}
-              data={sensorData}
+          <ResponsiveContainer width="98%" height={300}>
+          <LineChart data={emgData}>
+            <XAxis dataKey="name" tick={false}/>
+            <YAxis/>
+            <CartesianGrid strokeDasharray="3 3"/>
+            <Tooltip/>
+            <Legend/>
+            <Line
+              legendType="none"
+              type="monotone"
+              dataKey="emg"
+              stroke="#8884d8"
+              dot={false}
+              isAnimationActive={false}
             />
+          </LineChart>
+          </ResponsiveContainer>
+        </div>
+        {/*<div className="emg">*/}
+        {/*  <EMGData*/}
+        {/*    data={emgData.value}*/}
+        {/*    emgMin={emgMin}*/}
+        {/*    emgMax={emgMax}*/}
+        {/*  />*/}
+        {/*</div>*/}
+        <div className="tables">
+          {/*<div className="accelerometer">*/}
+          {/*  <NewTable*/}
+          {/*    dancer_id={this.props.dancer_id}*/}
+          {/*    data={sensorData}*/}
+          {/*  />*/}
+          {/*</div>*/}
+          <div className="accelerometer">
+            <ResponsiveContainer width="80%" height={300}>
+              <LineChart data={accelerometerData}>
+                <XAxis dataKey="name" tick={false} />
+                <YAxis/>
+                <CartesianGrid strokeDasharray="3 3"/>
+                <Tooltip/>
+                <Legend/>
+                <Line
+                  type="monotone"
+                  dataKey="x"
+                  stroke="#8884d8"
+                  dot={false}
+                  isAnimationActive={false}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="y"
+                  stroke="#82ca9d"
+                  dot={false}
+                  isAnimationActive={false}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="z"
+                  stroke="#FF0000"
+                  dot={false}
+                  isAnimationActive={false}
+                />
+              </LineChart>
+            </ResponsiveContainer>
           </div>
           <div className="gyroscope">
             <GyroscopeTable

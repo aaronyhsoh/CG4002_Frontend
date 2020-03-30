@@ -2,31 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dbde795-b7ae-4025-a817-92879cb0aebf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/Api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/Constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AppBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DanceData.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DanceData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EMGData.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EMGData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FunctionBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GyroscopeTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewTable.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SignIn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/DataStore.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/UserStore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LineGraph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GyroscopeTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GyroscopeTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +44,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Webstorm\untitled\src\components" />
+      <recent name="E:\Webstorm\untitled\src\components\D3_components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -108,6 +91,10 @@
       <workItem from="1583338764845" duration="41000" />
       <workItem from="1583344293186" duration="14433000" />
       <workItem from="1583550863423" duration="15643000" />
+      <workItem from="1584674158080" duration="1896000" />
+      <workItem from="1585403964621" duration="6522000" />
+      <workItem from="1585481863629" duration="4454000" />
+      <workItem from="1585585945660" duration="3378000" />
     </task>
     <servers />
   </component>
