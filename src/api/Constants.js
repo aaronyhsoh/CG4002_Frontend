@@ -1,6 +1,6 @@
 export default {
   PORT: {
-    BACKEND: "http://localhost:5000"
+    BACKEND: "http://localhost:4000"
   },
 
 }
