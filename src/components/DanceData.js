@@ -14,7 +14,7 @@ class DanceData extends React.Component {
       <div className="dance-data-component">
         <h1 className="dance-data-header">Dance data</h1>
         <p className="dance-move">Dance Move: {this.props.danceMove}</p>
-        <p className="dance-position">Position: {this.props.position}</p>
+        {/*<p className="dance-position">Position: {this.props.position}</p>*/}
       </div>
     )
   }

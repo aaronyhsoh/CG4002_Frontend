@@ -103,6 +103,7 @@ class Main extends React.Component {
 
   render() {
     const {accelerometerData, emgData, danceData, emgMin, emgMax, stream, gyroscopeData } = this.state;
+    const positionData = {}
 
     return (
       <div>
@@ -116,7 +117,7 @@ class Main extends React.Component {
         <div className="dance">
           <DanceData
             danceMove={danceData.dance_move}
-            position={danceData.position}
+            //position={danceData.position}
           />
         </div>
         <div className="emg">
