@@ -153,7 +153,7 @@ class Main extends React.Component {
           {/*  />*/}
           {/*</div>*/}
           <div className="accelerometer">
-            <ResponsiveContainer width="80%" height={300}>
+            <ResponsiveContainer width="100%" height={300}>
               <LineChart data={accelerometerData}>
                 <XAxis dataKey="name" tick={false} />
                 <YAxis/>
